@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvailabilityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -35,4 +36,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile/mentor/information', [ProfileController::class, 'updateMentorInformation'])->name('profile.update.mentor.information');
 
     Route::get('/skills', [ProfileController::class, 'showSkills'])->name('skills.index');
+
+    Route::get('availability', AvailabilityController::class)->name('availability');
 });
